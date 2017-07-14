@@ -21,6 +21,7 @@ function getCSVFields(callback) {
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "https://upload-php.herokuapp.com/upload-manager.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
   xhr.send(CSV_URL);
 
  
