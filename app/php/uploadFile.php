@@ -9,7 +9,7 @@ $targetFile = "data/tempfile";
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
-echo $_FILES["fileToUpload"]["name"];
+echo $_FILES["fileToUpload"];
 
 echo 'file check exist \n';
 // Check if file already exists
