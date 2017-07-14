@@ -40,7 +40,7 @@ function saveCSV(userCSV) {
             console.log("DONE"); 
           }
           error: function() {
-            console.log("FAIL);
+            console.log("FAIL");
           }
       });
    }
