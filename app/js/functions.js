@@ -32,7 +32,7 @@ function saveCSV(userCSV) {
         rows.push(row.data);
       }, 
       complete : function() {
-        $.adjax({
+        $.ajax({
           url: 'upload/', 
           method: 'post',
           data: rows,
