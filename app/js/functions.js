@@ -16,7 +16,34 @@ function getCSVFields(callback) {
       return parseFields(results.data, callback);
     }
   });
+  saveCSV(USER_CSV);
   CSV_URL = URL.createObjectURL(USER_CSV); // create URL representing USER_CSV
+}
+
+function saveCSV(userCSV) {
+  var rows = [];
+
+  Papa.parse(userCSV, {
+    download : true,
+    header : true,
+      step: function(row) {
+        rows.push(row.data);
+      }, 
+      complete : function() {
+        $.adjax({
+          url: 'upload/', 
+          method: 'post',
+          data: rows,
+          success: function(response) {
+            console.log("DONE"); 
+          }
+          error: function() {
+            console.log("FAIL);
+          }
+      });
+   }
+ }
+
 }
 
 //Send fields array back inside the called function
