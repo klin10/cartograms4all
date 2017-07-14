@@ -21,8 +21,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(file_exists("upload/" . $_FILES["photo"]["name"])){
                 echo $_FILES["photo"]["name"] . " is already exists.";
             } else{
-                move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $_FILES["photo"]["name"]);
-                echo "Your file was uploaded successfully.";
+                if (move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $_FILES["photo"]["name"])){
+                  echo "Your file was uploaded successfully.";
+                }
+                else {
+
+		}
             } 
         } else{
             echo "Error: There was a problem uploading your file. Please try again."; 
