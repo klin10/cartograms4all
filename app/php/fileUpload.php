@@ -6,7 +6,7 @@ $uploadfile = $uploadddir . basename($_FILES['userfile']['name']);
 echo '<pre>';
 
 if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-  echo " File Uploaded"
+  echo " File Uploaded";
 } else {
 
   echo "failed"
