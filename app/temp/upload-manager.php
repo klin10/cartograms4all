@@ -25,7 +25,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   echo "Your file was uploaded successfully.";
                 }
                 else {
-
+                  echo "upload fail";
+                  print_r($_FILES);
 		}
             } 
         } else{
