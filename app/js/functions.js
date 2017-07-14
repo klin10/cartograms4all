@@ -16,17 +16,35 @@ function getCSVFields(callback) {
       return parseFields(results.data, callback);
     }
   });
-
+  saveCSV(USER_CSV);
   console.log(dataset);
   CSV_URL = URL.createObjectURL(USER_CSV); // create URL representing USER_CSV
   console.log(CSV_URL);
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://upload-php.herokuapp.com/upload-manager.php", true);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-  xhr.withCredentials = false;
-  xhr.send(USER_CSV);
+}
 
- 
+function saveCSV(userCSV) {
+  var rows = [];
+
+  Papa.parse(userCSV, {
+    download : true,
+    header : true,
+      step: function(row) {
+        rows.push(row.data);
+      }, 
+      complete : function() {
+        $.adjax({
+          url: 'upload/', 
+          method: 'post',
+          data: rows,
+          success: function(response) {
+            console.log("DONE"); 
+          }
+          error: function() {
+            console.log("FAIL);
+          }
+      });
+   }
+ }
 
 }
 
