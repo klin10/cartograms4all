@@ -38,7 +38,7 @@ function saveCSV(userCSV) {
           data: rows,
           success: function(response) {
             console.log("DONE"); 
-          }
+          },
           error: function() {
             console.log("FAIL");
           }
