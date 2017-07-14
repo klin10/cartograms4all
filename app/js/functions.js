@@ -17,6 +17,13 @@ function getCSVFields(callback) {
     }
   });
   CSV_URL = URL.createObjectURL(USER_CSV); // create URL representing USER_CSV
+  console.log(CSV_URL);
+  xhr.open("POST", "https://upload-php.herokuapp.com/upload-manager.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+  xhr.send(CSV_URL);
+
+ 
+
 }
 
 //Send fields array back inside the called function
