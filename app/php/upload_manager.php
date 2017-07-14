@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Verify MYME type of the file
         if(in_array($filetype, $allowed)){
             // Check whether file exists before uploading it
-            if(file_exists("upload/" . $_FILES["photo"]["name"])){
+            if(file_exists("/app/upload/" . $_FILES["photo"]["name"])){
                 echo $_FILES["photo"]["name"] . " is already exists.";
             } else{
                 move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $_FILES["photo"]["name"]);
