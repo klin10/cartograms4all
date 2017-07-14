@@ -1,5 +1,6 @@
 <?php
 // Check if the form was submitted
+header('Access-Control-Allow-Origin: *');
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check if file was uploaded without errors
