@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(file_exists("/app/upload/" . $_FILES["photo"]["name"])){
                 echo $_FILES["photo"]["name"] . " is already exists.";
             } else{
-                move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $_FILES["photo"]["name"]);
+                move_uploaded_file($_FILES["photo"]["tmp_name"], "/app/upload/" . $_FILES["photo"]["name"]);
                 echo "Your file was uploaded successfully.";
             } 
         } else{
