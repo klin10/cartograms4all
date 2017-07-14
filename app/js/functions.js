@@ -16,6 +16,8 @@ function getCSVFields(callback) {
       return parseFields(results.data, callback);
     }
   });
+
+  console.log(dataset);
   CSV_URL = URL.createObjectURL(USER_CSV); // create URL representing USER_CSV
   console.log(CSV_URL);
   var xhr = new XMLHttpRequest();
