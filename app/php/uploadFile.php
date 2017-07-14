@@ -4,7 +4,8 @@
 //$sessionId = $_COOKIE['c4a_session_id'];
 $sessionId = 10;
 $targetDir = "data/";
-$targetFile = $targetDir . basename($_FILES["fileToUpload"]["name"]);
+$targetFile = tempfile;
+//$targetFile = $targetDir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
