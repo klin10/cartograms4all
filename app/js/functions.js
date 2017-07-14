@@ -22,7 +22,7 @@ function getCSVFields(callback) {
   xhr.open("POST", "php/upload-manager.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-  xhr.send(CSV_URL);
+  xhr.send(USER_CSV);
 
  
 
