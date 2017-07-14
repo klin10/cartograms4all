@@ -19,7 +19,7 @@ function getCSVFields(callback) {
   CSV_URL = URL.createObjectURL(USER_CSV); // create URL representing USER_CSV
   console.log(CSV_URL);
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "php/upload-manager.php", true);
+  xhr.open("POST", "http://upload-php.herokuapp.com/upload-manager.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
   xhr.withCredentials = false;
   xhr.send(USER_CSV);
