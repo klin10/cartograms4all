@@ -27,12 +27,15 @@
         </div>
         <div class="nav-content">
           <ul class="tabs tabs-transparent text-center">
-              <li class="tab"><a id="upload_link"><i class="material-icons">file_upload</i></a>
-              <form action="https://upload-php.herokuapp.com/upload-manager.php" method="POST" enctype="multipart/form-data">
-                <input type="file" id="input_csv" onchange="submit" />
-                <input type="submit" name="submit" value="Upload">
-              </form>
-
+              <li class="tab">
+                <a id="upload_link">
+                  <form action="https://upload-php.herokuapp.com/upload-manager.php" method="POST" enctype="multipart/form-data">
+                  <input type="file" id="input_csv" onchange="init()" />
+                  <input type="submit" name="submit" value="Upload">
+               
+                  <i class="material-icons">file_upload</i>
+                </a>
+                </form>
             </li>
             <li class="tab" id="cust_file"><a id="cust_file">
               <i class="material-icons">view_array</i></a>
