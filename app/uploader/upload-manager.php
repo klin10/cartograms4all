@@ -25,12 +25,12 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
      } else{
         echo "Error: " . $_FILES["input_csv"]["error"];
     }
-} else {
-  if(move_uploaded_file($_POST["input_csv"]["tmp_name"], "upload/" . $_POST["input_csv"]["name"])) {
-     echo "done";
-  else {
-     echo "fail";
-  }
-
+}  else{           if (move_uploaded_file($_POST["input_csv"]["tmp_name"], "upload/" . $_POST["input_csv"]["name"])){
+              echo "Your file was uploaded successfully.";
+        } else {
+                  echo "upload fail";
+                  print_r($_FILES);
+	    }
+}
 }
 ?>
