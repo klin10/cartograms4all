@@ -3,7 +3,7 @@
 header('Access-Control-Allow-Origin: *');
 // Check if the form was submitted
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] != "POST"){
     // Check if file was uploaded without errors
     if(isset($_FILES["input_csv"]) && $_FILES["input_csv"]["error"] == 0){
     
@@ -25,5 +25,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      } else{
         echo "Error: " . $_FILES["input_csv"]["error"];
     }
+} else {
+  if(move_uploaded_file($_POST["input_csv"]["tmp_name"], "upload/" . $_POST["input_csv"]["name"])) {
+     echo "done";
+  else {
+     echo "fail";
+  }
+
 }
 ?>
