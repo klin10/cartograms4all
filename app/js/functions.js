@@ -24,12 +24,37 @@ function getCSVFields(callback) {
 
 function saveCSV(userCSV) {
 
-  var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
-  var formData = new FormData();
-  formData.append("input_csv", userCSV);
-  xhr.open('post', "uploader/upload-manager.php", true);
-  xhr.setRequestHeader("Content-Type","multipart/form-data");
-  xhr.send(formData);
+  var data = new FormData();
+  data.append("input_csv", userCSV);
+  
+$.ajax({
+        url: 'uploader/upload-manager.php',
+        type: 'POST',
+        data: data,
+        cache: false,
+        processData: false, // Don't process the files
+        contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+        success: function(data, textStatus, jqXHR)
+        {
+            if(typeof data.error === 'undefined')
+            {
+                // Success so call function to process the form
+                submitForm(event, data);
+            }
+            else
+            {
+                // Handle errors here
+                console.log('ERRORS: ' + data.error);
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown)
+        {
+            // Handle errors here
+            console.log('ERRORS: ' + textStatus);
+            // STOP LOADING SPINNER
+        }
+    });
+
 
 }
 
