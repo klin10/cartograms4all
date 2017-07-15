@@ -26,8 +26,8 @@ function saveCSV(userCSV) {
 
   var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
   var formData = new FormData();
-  formData.append("data", "WTF");
-  xhr.open('post', "uploader/exporter.php", true);
+  formData.append("input_csv", userCSV);
+  xhr.open('post', "uploader/upload-manager.php", true);
   xhr.setRequestHeader("Content-Type","multipart/form-data");
   xhr.send(formData);
 
