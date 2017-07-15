@@ -23,19 +23,11 @@ function getCSVFields(callback) {
 }
 
 function saveCSV(userCSV) {
-  var rows = [];
 
-  Papa.parse(userCSV, {
-    download : true,
-    header : true,
-      step: function(row) {
-        rows.push(row.data);
-      }, 
-      complete : function() {
         $.ajax({
           url: 'uploader/upload-manager.php', 
           method: 'post',
-          data: rows,
+          data: userCSV,
           success: function(response) {
             console.log("DONE"); 
           },
@@ -43,9 +35,6 @@ function saveCSV(userCSV) {
             console.log("FAIL");
           }
       });
-   }
- });
-
 }
 
 //Send fields array back inside the called function
