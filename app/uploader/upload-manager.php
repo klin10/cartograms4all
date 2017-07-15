@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 // Check if the form was submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check if file was uploaded without errors
-    if(isset($_POST["input_csv"]) && $_POST["input_csv"]["error"] == 0){
+    if(isset($_POST['input_csv']) && $_POST['input_csv']['error'] == 0){
     
        // Verify file size - 5MB maximum
         $maxsize = 5 * 1024 * 1024;
@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	    }
         }    
      } else{
-        echo "Error: " . $_POST["input_csv"]["error"];
+        die("Error: " . $_POST["input_csv"]["error"]);
     }
 }
 ?>
