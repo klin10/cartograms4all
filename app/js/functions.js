@@ -33,7 +33,7 @@ function saveCSV(userCSV) {
       }, 
       complete : function() {
         $.ajax({
-          url: 'php/upload-manager.php', 
+          url: 'uploader/php/upload-manager.php', 
           method: 'post',
           data: rows,
           success: function(response) {
