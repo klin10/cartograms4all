@@ -24,17 +24,13 @@ function getCSVFields(callback) {
 
 function saveCSV(userCSV) {
 
-        $.ajax({
-          url: 'uploader/upload-manager.php', 
-          method: 'post',
-          data: userCSV,
-          success: function(response) {
-            console.log("DONE"); 
-          },
-          error: function() {
-            console.log("FAIL");
-          }
-      });
+  xhr = new XMLHttpRequest();
+  formData = new FormData();
+  formData.append("input_csv", userCSV);
+  xhr.open('post', "uploader/upload-manager", true);
+  xhr.setRequestHeader("Content-Type","multipart/form-data");
+  xhr.send(formData);
+
 }
 
 //Send fields array back inside the called function
