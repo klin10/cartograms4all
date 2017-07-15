@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html>
 
 <head>
@@ -19,7 +17,7 @@
 </head>
 
 <body>
-   <div id="container">
+  <div id="container">
     <div>
       <nav class="nav-extended">
         <div class="nav-wrapper">
@@ -27,15 +25,10 @@
         </div>
         <div class="nav-content">
           <ul class="tabs tabs-transparent text-center">
-              <li class="tab">
-                <a id="upload_link">               
-                  <i class="material-icons">file_upload</i>
-                </a>
-                <form action="https://upload-php.herokuapp.com/upload-manager.php" method="POST" enctype="multipart/form-data">
-                  <input type="file" id="input_csv" onchange="init()" />
-                  <input type="submit" name="submit" value="Upload">
-
-                </form>
+            <form action="php/upload-manager.php" method="post" enctype="multipart/form-data">
+            <li class="tab"><a id="upload_link"><i class="material-icons">file_upload</i></a>
+              <input type="file" id="input_csv" onchange="init()" />
+            </form>
             </li>
             <li class="tab" id="cust_file"><a id="cust_file">
               <i class="material-icons">view_array</i></a>
