@@ -44,7 +44,8 @@ function init() {
     return;
   }
   USER_CSV = document.getElementById('input_csv').files[0];
-  saveCSV(USER_CSV);  
+  //saveCSV(USER_CSV);  
+  document.getElementById("input_csv").parentElement.parentElement.submit(); 
 
   console.log("Cartograms 4 All: Start init()");
   map = d3.select("#map");
