@@ -41,8 +41,9 @@ function importUserSettings() {
 
 //Export cookie information and call API to write file as sessionId.json
 function exportUserSettings() {
+  createCookie("fileName", USER_CSV); 
   var userCookie = exportCookie();
-  var sessionId = userCookie['c4a_session_id'];
+  var sessionId = userCookie['user_session_cookie'];
   //CALL API to write the cookie information into sessionId
-  //WRITE_FILE(sessionId);
+  //WRITE_FILE(sessionId); 
 }
