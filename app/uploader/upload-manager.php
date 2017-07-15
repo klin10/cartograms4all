@@ -1,9 +1,7 @@
 <?php
-
 header('Access-Control-Allow-Origin: *');
 // Check if the form was submitted
-
-if($_SERVER["REQUEST_METHOD"] != "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check if file was uploaded without errors
     if(isset($_FILES["input_csv"]) && $_FILES["input_csv"]["error"] == 0){
     
@@ -26,5 +24,4 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
         echo "Error: " . $_FILES["input_csv"]["error"];
     }
 }
-
 ?>
