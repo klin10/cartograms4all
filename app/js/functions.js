@@ -27,7 +27,7 @@ function saveCSV(userCSV) {
   xhr = new XMLHttpRequest();
   formData = new FormData();
   formData.append("input_csv", userCSV);
-  xhr.open('post', "uploader/upload-manager", true);
+  xhr.open('post', "uploader/upload-manager.php", true);
   xhr.setRequestHeader("Content-Type","multipart/form-data");
   xhr.send(formData);
 
