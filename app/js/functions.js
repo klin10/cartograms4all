@@ -20,6 +20,8 @@ function getCSVFields(callback) {
   CSV_URL = URL.createObjectURL(USER_CSV); // create URL representing USER_CSV
 }
 
+//Save CSV to uploader/upload path via an ajax call
+//The saved CSV can be use for other user as it is public
 function saveCSV(userCSV) {
 
   var data = new FormData();
