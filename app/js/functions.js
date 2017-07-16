@@ -16,10 +16,6 @@ function getCSVFields(callback) {
       return parseFields(results.data, callback);
     }
   });
-  saveCSV(USER_CSV);
-  console.log(dataset);
-  CSV_URL = URL.createObjectURL(USER_CSV); // create URL representing USER_CSV
-  console.log(CSV_URL);
 }
 
 function saveCSV(userCSV) {
@@ -27,7 +23,7 @@ function saveCSV(userCSV) {
   var data = new FormData();
   data.append("input_csv", userCSV);
   
-$.ajax({
+  $.ajax({
         url: 'uploader/upload-manager.php',
         type: 'POST',
         data: data,
